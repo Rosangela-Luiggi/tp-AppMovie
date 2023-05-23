@@ -7,7 +7,7 @@ import { grey } from '@mui/material/colors';
 
 
 
-const pages = ['Home', 'Últimos Lanzamientos', 'Populares', 'Buscar'];
+const pages = ['Home', 'upcoming', 'Populares', 'Buscar'];
 
 const color = grey[900];
 export default function Header() {
@@ -44,7 +44,7 @@ export default function Header() {
                     textDecoration: 'none',
                   }}
                 >
-                  LOGO
+                 AppMovie
                 </Typography>
       
                 <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

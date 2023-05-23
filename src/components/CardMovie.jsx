@@ -3,20 +3,21 @@ import Card from '@mui/material/Card';
 import { Button, CardActionArea, CardActions, Typography, CardMedia, CardContent} from '@mui/material';
 import { AiOutlineEye } from "react-icons/ai";
 
-export default function CardMovie(image, name) {
+export default function CardMovie({ image, title }) {
     
   return (
-    <Card sx={{ maxWidth: 220, mt: 5}}>
+    <Card sx={{ maxWidth: 300, maxHeight: 450, mt: 3}}>
       <CardActionArea>
         <CardMedia
           component="img"
-          height="150"
+          height="220"
+          width="300"
           image={image}
           alt="poster de la peli"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {name}
+          <Typography gutterBottom variant="h6" component="div" fontSize="15px">
+            {title}
           </Typography>
         </CardContent>
       </CardActionArea>
