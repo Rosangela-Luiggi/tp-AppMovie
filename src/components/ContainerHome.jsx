@@ -1,7 +1,9 @@
-
+import CarouselMovie from "./CarouselMovie"
 
 export default function ContainerHome() {
   return (
-    <div>ContainerHome</div>
+    <div>
+      <CarouselMovie/>
+    </div>
   )
 }

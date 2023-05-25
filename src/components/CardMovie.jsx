@@ -4,7 +4,7 @@ import { Button, CardActionArea, CardActions, Typography, CardMedia, CardContent
 import { AiOutlineEye } from "react-icons/ai";
 
 export default function CardMovie({ image, title }) {
-    
+    console.log(image)
   return (
     <Card sx={{ maxWidth: 300, maxHeight: 450, mt: 3}}>
       <CardActionArea>

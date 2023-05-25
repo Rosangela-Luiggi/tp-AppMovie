@@ -5,6 +5,7 @@ import ContainerCategory from "./components/ContainerCategory.jsx";
 import ContainerHome from "./components/ContainerHome";
 import Search from "./components/Search";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { MovieDetail } from "./components/MovieDetails";
 
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element= {<ContainerHome/>} />
         <Route path="/category/:Optioncategory" element= {<ContainerCategory />} />
         <Route path="/busqueda" element= {<Search/>} />
+        <Route path="/detail" element= {<MovieDetail/>} />
         
       </Routes>
       <Footer/>
