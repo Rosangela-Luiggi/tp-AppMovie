@@ -1,4 +1,3 @@
-
 import CardMovie from './CardMovie'
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -13,24 +12,22 @@ export default function ContainerCategory() {
   const [page, setPage] = useState(1);
   const { optionCategory } = useParams()
 
-  
-  
-  
+
 
   useEffect(() => {
-    
-    if (optionCategory =="upcoming" || optionCategory ==  "popular") { 
+
+    if (optionCategory == "upcoming" || optionCategory == "popular") {
       console.log(optionCategory)
-     
-    axios(`https://api.themoviedb.org/3/movie/${optionCategory}?language=es-ES&api_key=${apiKey}&page=${page}`)
-    .then(
-      (data) => {
-        setMovie(data.data.results);
 
-      });
-}
+      axios(`https://api.themoviedb.org/3/movie/${optionCategory}?language=es-ES&api_key=${apiKey}&page=${page}`)
+        .then(
+          (data) => {
+            setMovie(data.data.results);
 
-  }, [optionCategory, apiKey, page]);
+          });
+    }
+
+  }, [optionCategory, page]);
 
 
   return (

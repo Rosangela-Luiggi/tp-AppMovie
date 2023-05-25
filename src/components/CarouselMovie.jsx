@@ -18,25 +18,23 @@ export default function CarouselMovie() {
 
         });
 
-
-
   }, [apiKey]);
 
   return (
-
-    <Carousel>
+    <Carousel showArrows={true}>
       {movies.map((movie) => (
 
         <div key={movie.id}>
           <img
-            src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />
-          <p className="legend" style={{fontSize:"18px"}}>{movie.title} <br/>{movie.overview}</p>
-          
+            src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} />
+          <p className="legend" style={{ fontSize: "15px" }}>{movie.title} <br />{movie.overview}</p>
+
         </div>
 
       ))}
 
     </Carousel>
+
 
   );
 

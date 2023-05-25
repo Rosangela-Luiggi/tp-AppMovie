@@ -13,8 +13,9 @@ import {
 } from "@mui/material";
 import * as React from "react";
 import { grey } from "@mui/material/colors";
+import { Link } from "react-router-dom";
 
-const pages = ["Home", "upcoming", "popular", "Buscar"];
+const pages = ["home", "upcoming", "popular", "search"];
 
 const color = grey[900];
 export default function Header() {
@@ -83,7 +84,9 @@ export default function Header() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Link  to={`/page/${page}`} style={{textDecoration: "none"}}>
                   <Typography textAlign="center">{page}</Typography>
+                  </Link>
                 </MenuItem>
               ))}
             </Menu>
@@ -112,13 +115,14 @@ export default function Header() {
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
+               <Link  to={`/page/${page}`} key={page} style={{textDecoration: "none"}}>
               <Button
-                key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 {page}
               </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>

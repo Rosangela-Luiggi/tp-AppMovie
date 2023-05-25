@@ -17,9 +17,9 @@ function App() {
     <Header/>
       <Routes>
         
-        <Route path="/" element= {<ContainerHome/>} />
-        <Route path="/category/:Optioncategory" element= {<ContainerCategory />} />
-        <Route path="/busqueda" element= {<Search/>} />
+        <Route path="/page/home" element= {<ContainerHome/>} />
+        <Route path="/page/:Optioncategory" element= {<ContainerCategory />} />
+        <Route path="/page/search" element= {<Search/>} />
         <Route path="/detail" element= {<MovieDetail/>} />
         
       </Routes>
