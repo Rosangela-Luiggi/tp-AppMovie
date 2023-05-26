@@ -1,13 +1,13 @@
 import {
-  
+
   Container,
   ListItem,
   ListItemAvatar,
   Avatar,
   ListItemText,
-  
-  List, ListSubheader
+  List, ListSubheader, IconButton
 } from "@mui/material";
+import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOutlined';
 import axios from "axios";
 import { useEffect, useState } from 'react';
 
@@ -34,8 +34,9 @@ export default function ListMovie() {
 
     
   return (
-    <Container>
-         <List
+    <Container maxWidth="sm" display="flex">
+         
+    <List
       sx={{
         width: '100%',
         maxWidth: 360,
@@ -57,7 +58,10 @@ export default function ListMovie() {
                     <Avatar alt="Profile Picture" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
                   </ListItemAvatar>
                   <ListItemText  />
-                  {movie.title}
+                {movie.title}
+                <IconButton edge="end" aria-label="comments" sx={{ml: 6}}>
+                <ArrowCircleRightOutlinedIcon />
+              </IconButton>
                 </ListItem>
                   ))}
           
