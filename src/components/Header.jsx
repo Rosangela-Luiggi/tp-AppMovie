@@ -15,7 +15,7 @@ import * as React from "react";
 import { grey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
 
-const pages = ["home", "upcoming", "popular", "search"];
+const pages = ["upcoming", "popular",];
 
 const color = grey[900];
 export default function Header() {
@@ -84,8 +84,8 @@ export default function Header() {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Link  to={`/page/${page}`} style={{textDecoration: "none"}}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Link to={`category/${page}`} style={{ textDecoration: "none" }}>
+                    <Typography textAlign="center">{page}</Typography>
                   </Link>
                 </MenuItem>
               ))}
@@ -114,16 +114,26 @@ export default function Header() {
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Link to={`/`} style={{ textDecoration: "none" }}>
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              Home
+            </Button>
+            </Link>
             {pages.map((page) => (
-               <Link  to={`/page/${page}`} key={page} style={{textDecoration: "none"}}>
-              <Button
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
-              >
-                {page}
-              </Button>
+              <Link to={`/category/${page}`} key={page} style={{ textDecoration: "none" }}>
+                <Button
+                  onClick={handleCloseNavMenu}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
               </Link>
             ))}
+            <Link to={`/detail`} style={{ textDecoration: "none" }}>
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              Search
+            </Button>
+            </Link>
           </Box>
         </Toolbar>
       </Container>

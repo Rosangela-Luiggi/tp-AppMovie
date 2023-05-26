@@ -7,7 +7,6 @@ import Search from "./components/Search";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { MovieDetail } from "./components/MovieDetails";
 
-
 function App() {
   
   
@@ -17,9 +16,9 @@ function App() {
     <Header/>
       <Routes>
         
-        <Route path="/page/home" element= {<ContainerHome/>} />
-        <Route path="/page/:Optioncategory" element= {<ContainerCategory />} />
-        <Route path="/page/search" element= {<Search/>} />
+        <Route path="/"  element= {<ContainerHome/>} />
+        <Route path="/category/:optionCategory" element= {<ContainerCategory />} />
+        <Route path="/search" element= {<Search/>} />
         <Route path="/detail" element= {<MovieDetail/>} />
         
       </Routes>

@@ -15,21 +15,19 @@ export default function ContainerCategory() {
 
 
   useEffect(() => {
-
-    if (optionCategory == "upcoming" || optionCategory == "popular") {
-      console.log(optionCategory)
-
+    
       axios(`https://api.themoviedb.org/3/movie/${optionCategory}?language=es-ES&api_key=${apiKey}&page=${page}`)
         .then(
           (data) => {
             setMovie(data.data.results);
 
           });
-    }
+          
+        
 
-  }, [optionCategory, page]);
+  }, [optionCategory, apiKey, page]);
 
-
+console.log(optionCategory)
   return (
 
     <Grid

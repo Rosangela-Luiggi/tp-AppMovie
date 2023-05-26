@@ -6,7 +6,6 @@ import axios from 'axios';
 
 export default function CarouselMovie() {
   const [movies, setMovies] = useState([]);
-
   const apiKey = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
