@@ -129,7 +129,7 @@ export default function Header() {
                 </Button>
               </Link>
             ))}
-            <Link to={`/detail`} style={{ textDecoration: "none" }}>
+            <Link to={`/search`} style={{ textDecoration: "none" }}>
             <Button sx={{ my: 2, color: "white", display: "block" }}>
               Search
             </Button>

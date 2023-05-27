@@ -10,7 +10,7 @@ export default function CarouselMovie() {
 
   useEffect(() => {
 
-    axios(`https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=es-ES`)
+    axios(`https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=es-ES`)
       .then(
         (data) => {
           setMovies(data.data.results);
