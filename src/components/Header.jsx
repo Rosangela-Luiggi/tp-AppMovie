@@ -33,9 +33,10 @@ export default function Header() {
     <AppBar position="fixed" style={{ backgroundColor: color }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
+        
           <LocalMoviesTwoToneIcon
             sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          />
+          /><Link to={`/`} style={{ textDecoration: "none" }}>
           <Typography
             variant="h6"
             noWrap
@@ -52,6 +53,7 @@ export default function Header() {
           >
             AppMovie
           </Typography>
+          </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -94,6 +96,7 @@ export default function Header() {
           <LocalMoviesTwoToneIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
+          
           <Typography
             variant="h5"
             noWrap

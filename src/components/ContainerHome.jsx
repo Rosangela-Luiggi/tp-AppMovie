@@ -3,7 +3,7 @@ import ListMovie from "./ListMovie"
 
 export default function ContainerHome() {
   return (
-    <div>
+    <div style={{marginTop: "45px"}}>
       <CarouselMovie />
       <ListMovie/>
       

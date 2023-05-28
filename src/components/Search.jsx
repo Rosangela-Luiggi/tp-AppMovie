@@ -1,8 +1,11 @@
+import InputSearch from "./InputSearch";
 
 
 export default function Search() {
   return (
-    <div>Search</div>
+    <div>
+      <InputSearch/>
+    </div>
   )
 }
 

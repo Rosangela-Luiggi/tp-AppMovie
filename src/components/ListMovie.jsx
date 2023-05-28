@@ -11,7 +11,8 @@ import ArrowCircleRightOutlinedIcon from '@mui/icons-material/ArrowCircleRightOu
 import axios from "axios";
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom";
-
+import MovieFilterIcon from '@mui/icons-material/MovieFilter';
+import MovieCreationIcon from '@mui/icons-material/MovieCreation';
 
 export default function ListMovie() {
 
@@ -47,27 +48,28 @@ export default function ListMovie() {
 
 
     return (
-        <Container >
+        <Container maxWidth = "100%" sx={{ marginTop: 10, marginBottom: 10}}>
             <Stack
   direction={{ xs: 'column', sm: 'row' }}
-  spacing={{ xs: 1, sm: 2, md: 4 }}
+  spacing={8}
   justifyContent ="center"
 >
-            <Box sx={{ borderColor: 'primary.main', border: 1, margin: 10}}> 
+            <Box sx={{ border: 2}}> 
                 <List
                     sx={{
                         width: '100%',
-                        maxWidth: 480,
+                        maxWidth: 500,
                         bgcolor: 'background.paper',
                         position: 'relative',
                         overflow: 'auto',
-                        maxHeight: 300,
-                        '& ul': { padding: 0 },
+                        maxHeight: 400,
+                        padding:0
+                        
                     }}
 
                 >
 
-                    <ListSubheader>Lista de Peliculas Populares</ListSubheader>
+                    <ListSubheader sx={{fontSize: "20px", textAlign: "center", fontWeight: "bold", color: "blue", padding:"6px"}} >Peliculas más Populares < MovieCreationIcon/></ListSubheader>
 
                     {moviesPopular.map((movie) => (
 
@@ -89,21 +91,22 @@ export default function ListMovie() {
 
          
 
-            <Box sx={{ borderColor: 'primary.main', border: 1, margin: 10}}>
+            <Box sx={{ border: 2}}>
                 <List
                     sx={{
                         width: '100%',
-                        maxWidth: 580,
-                        bgcolor: 'background.paper',
-                        position: 'relative',
-                        overflow: 'auto',
-                        maxHeight: 300,
-                        '& ul': { padding: 0 },
+        maxWidth: 500,
+        bgcolor: 'background.paper',
+        position: 'relative',
+        overflow: 'auto',
+        maxHeight: 400,
+        padding: 0
+        
                     }}
 
                 >
 
-                    <ListSubheader>Lista de Peliculas Populares</ListSubheader>
+                    <ListSubheader sx={{fontSize: "20px", textAlign: "center", fontWeight: "bold", color: "blue",  padding:"6px"}} >Peliculas con mejor puntiación <MovieFilterIcon/></ListSubheader>
 
                     {moviesPuntuacion.map((movie) => (
 
