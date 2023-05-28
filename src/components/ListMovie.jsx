@@ -41,90 +41,90 @@ export default function ListMovie() {
                 (data) => {
                     setMoviePuntuacion(data.data.results);
 
-                });
+                }).catch(error => console.log(error));
 
     }, [apiKey]);
 
 
 
     return (
-        <Container maxWidth = "100%" sx={{ marginTop: 10, marginBottom: 10}}>
+        <Container maxWidth="100%" sx={{ marginTop: 10, marginBottom: 10 }}>
             <Stack
-  direction={{ xs: 'column', sm: 'row' }}
-  spacing={8}
-  justifyContent ="center"
->
-            <Box sx={{ border: 2}}> 
-                <List
-                    sx={{
-                        width: '100%',
-                        maxWidth: 500,
-                        bgcolor: 'background.paper',
-                        position: 'relative',
-                        overflow: 'auto',
-                        maxHeight: 400,
-                        padding:0
-                        
-                    }}
+                direction={{ xs: 'column', sm: 'row' }}
+                spacing={8}
+                justifyContent="center"
+            >
+                <Box sx={{ border: 2 }}>
+                    <List
+                        sx={{
+                            width: '100%',
+                            maxWidth: 500,
+                            bgcolor: 'background.paper',
+                            position: 'relative',
+                            overflow: 'auto',
+                            maxHeight: 400,
+                            padding: 0
 
-                >
+                        }}
 
-                    <ListSubheader sx={{fontSize: "20px", textAlign: "center", fontWeight: "bold", color: "blue", padding:"6px"}} >Peliculas más Populares < MovieCreationIcon/></ListSubheader>
+                    >
 
-                    {moviesPopular.map((movie) => (
+                        <ListSubheader sx={{ fontSize: "20px", textAlign: "center", fontWeight: "bold", color: "blue", padding: "6px" }} >Peliculas más Populares < MovieCreationIcon /></ListSubheader>
 
-                        <ListItem key={movie.id}>
-                            <ListItemAvatar>
-                                <Avatar alt="Profile Picture" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
-                            </ListItemAvatar>
-                            <ListItemText />
-                            {movie.title}
-                            <Link to={`/search`} style={{ textDecoration: "none" }}>
-                                <IconButton edge="end" aria-label="comments" sx={{ ml: 6 }}>
-                                    <ArrowCircleRightOutlinedIcon />
-                                </IconButton>
-                            </Link>
-                        </ListItem>
-                    ))}
-                </List>
-            </Box>
+                        {moviesPopular.map((movie) => (
 
-         
+                            <ListItem key={movie.id}>
+                                <ListItemAvatar>
+                                    <Avatar alt="Profile Picture" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
+                                </ListItemAvatar>
+                                <ListItemText />
+                                {movie.title}
+                                <Link to={`/search`} style={{ textDecoration: "none" }}>
+                                    <IconButton edge="end" aria-label="comments" sx={{ ml: 6 }}>
+                                        <ArrowCircleRightOutlinedIcon />
+                                    </IconButton>
+                                </Link>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
 
-            <Box sx={{ border: 2}}>
-                <List
-                    sx={{
-                        width: '100%',
-        maxWidth: 500,
-        bgcolor: 'background.paper',
-        position: 'relative',
-        overflow: 'auto',
-        maxHeight: 400,
-        padding: 0
-        
-                    }}
 
-                >
 
-                    <ListSubheader sx={{fontSize: "20px", textAlign: "center", fontWeight: "bold", color: "blue",  padding:"6px"}} >Peliculas con mejor puntiación <MovieFilterIcon/></ListSubheader>
+                <Box sx={{ border: 2 }}>
+                    <List
+                        sx={{
+                            width: '100%',
+                            maxWidth: 500,
+                            bgcolor: 'background.paper',
+                            position: 'relative',
+                            overflow: 'auto',
+                            maxHeight: 400,
+                            padding: 0
 
-                    {moviesPuntuacion.map((movie) => (
+                        }}
 
-                        <ListItem key={movie.id}>
-                            <ListItemAvatar>
-                                <Avatar alt="Profile Picture" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
-                            </ListItemAvatar>
-                            <ListItemText />
-                            {movie.title}
-                            <Link to={`/search`} style={{ textDecoration: "none" }}>
-                                <IconButton edge="end" aria-label="comments" sx={{ ml: 6 }}>
-                                    <ArrowCircleRightOutlinedIcon />
-                                </IconButton>
-                            </Link>
-                        </ListItem>
-                    ))}
-                </List>
-            </Box>
+                    >
+
+                        <ListSubheader sx={{ fontSize: "20px", textAlign: "center", fontWeight: "bold", color: "blue", padding: "6px" }} >Peliculas con mejor puntiación <MovieFilterIcon /></ListSubheader>
+
+                        {moviesPuntuacion.map((movie) => (
+
+                            <ListItem key={movie.id}>
+                                <ListItemAvatar>
+                                    <Avatar alt="Profile Picture" src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
+                                </ListItemAvatar>
+                                <ListItemText />
+                                {movie.title}
+                                <Link to={`/search`} style={{ textDecoration: "none" }}>
+                                    <IconButton edge="end" aria-label="comments" sx={{ ml: 6 }}>
+                                        <ArrowCircleRightOutlinedIcon />
+                                    </IconButton>
+                                </Link>
+                            </ListItem>
+                        ))}
+                    </List>
+                </Box>
 
             </Stack>
         </Container>

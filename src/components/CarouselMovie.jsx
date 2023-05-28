@@ -16,16 +16,16 @@ export default function CarouselMovie() {
         (data) => {
           setMovies(data.data.results);
 
-        });
+        }).catch(error => console.log(error));
 
   }, [apiKey]);
 
   return (
-   
-     <Carousel showArrows={true} >
+
+    <Carousel showArrows={true} >
       {movies.map((movie) => (
 
-        <div key={movie.id} style={{height: "520px"}}>
+        <div key={movie.id} style={{ height: "520px" }}>
           <img
             src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} />
           <p className="legend" style={{ fontSize: "15px" }}>{movie.title} <br />{movie.overview}</p>
@@ -35,7 +35,7 @@ export default function CarouselMovie() {
       ))}
 
     </Carousel>
- 
+
 
 
   );

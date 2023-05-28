@@ -15,19 +15,19 @@ export default function ContainerCategory() {
 
 
   useEffect(() => {
-    
-      axios(`https://api.themoviedb.org/3/movie/${optionCategory}?language=es-ES&api_key=${apiKey}&page=${page}`)
-        .then(
-          (data) => {
-            setMovie(data.data.results);
 
-          });
-          
-        
+    axios(`https://api.themoviedb.org/3/movie/${optionCategory}?language=es-ES&api_key=${apiKey}&page=${page}`)
+      .then(
+        (data) => {
+          setMovie(data.data.results);
+
+        }).catch(error => console.log(error));
+
+
 
   }, [optionCategory, apiKey, page]);
 
-console.log(optionCategory)
+  
   return (
 
     <Grid
@@ -51,6 +51,7 @@ console.log(optionCategory)
             <CardMovie
               image={`https://image.tmdb.org/t/p/w500/${elem.poster_path}`}
               title={elem.title}
+              id={elem.id}
 
             />
 

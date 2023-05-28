@@ -1,12 +1,13 @@
 
 import Card from '@mui/material/Card';
-import { Button, CardActionArea, CardActions, Typography, CardMedia, CardContent} from '@mui/material';
+import { Button, CardActionArea, CardActions, Typography, CardMedia, CardContent } from '@mui/material';
 import { AiOutlineEye } from "react-icons/ai";
+import { Link } from 'react-router-dom';
 
-export default function CardMovie({ image, title }) {
-    console.log(image)
+export default function CardMovie({ image, title, id}) {
+ 
   return (
-    <Card sx={{ maxWidth: 300, maxHeight: 450, mt: 3}}>
+    <Card sx={{ maxWidth: 300, maxHeight: 450, mt: 3 }}>
       <CardActionArea>
         <CardMedia
           component="img"
@@ -22,9 +23,11 @@ export default function CardMovie({ image, title }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
+      <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
         <Button size="small" color="primary">
-          <AiOutlineEye/>
+          <AiOutlineEye />
         </Button>
+        </Link>
       </CardActions>
     </Card>
   );

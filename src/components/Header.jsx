@@ -33,26 +33,27 @@ export default function Header() {
     <AppBar position="fixed" style={{ backgroundColor: color }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-        
+
           <LocalMoviesTwoToneIcon
             sx={{ display: { xs: "none", md: "flex" }, mr: 1 }}
-          /><Link to={`/`} style={{ textDecoration: "none" }}>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            AppMovie
-          </Typography>
+          />
+          <Link to={`/`} style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              sx={{
+                mr: 2,
+                display: { xs: "none", md: "flex" },
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              AppMovie
+            </Typography>
           </Link>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -90,13 +91,19 @@ export default function Header() {
                     <Typography textAlign="center">{page}</Typography>
                   </Link>
                 </MenuItem>
+                
               ))}
+              <Link to={`/search`} style={{ textDecoration: "none" }}>
+                <MenuItem  onClick={handleCloseNavMenu}>
+                <Typography textAlign="center"> Search</Typography>
+                </MenuItem>
+              </Link>
             </Menu>
           </Box>
           <LocalMoviesTwoToneIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
-          
+<Link to={`/`} style={{ textDecoration: "none" }}>
           <Typography
             variant="h5"
             noWrap
@@ -113,14 +120,14 @@ export default function Header() {
               textDecoration: "none",
             }}
           >
-            LOGO
+            AppMovie
           </Typography>
-
+</Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-          <Link to={`/`} style={{ textDecoration: "none" }}>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              Home
-            </Button>
+            <Link to={`/`} style={{ textDecoration: "none" }}>
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Home
+              </Button>
             </Link>
             {pages.map((page) => (
               <Link to={`/category/${page}`} key={page} style={{ textDecoration: "none" }}>
@@ -133,9 +140,9 @@ export default function Header() {
               </Link>
             ))}
             <Link to={`/search`} style={{ textDecoration: "none" }}>
-            <Button sx={{ my: 2, color: "white", display: "block" }}>
-              Search
-            </Button>
+              <Button sx={{ my: 2, color: "white", display: "block" }}>
+                Search
+              </Button>
             </Link>
           </Box>
         </Toolbar>
