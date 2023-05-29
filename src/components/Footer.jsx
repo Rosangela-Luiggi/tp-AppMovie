@@ -8,14 +8,14 @@ const color = grey[900];
 export default function Footer() {
   return (
 
-    <AppBar position="static" style={{ backgroundColor: color }} sx={{ mb: 0 }} >
+    <AppBar position="static" sx={{ backgroundColor: color, mb: 0, justifyContent: "center", alignItems: "center" }} >
       <Box>
         <Toolbar variant="dense">
 
           <FcFilmReel />
 
           <Typography variant="h6" color="inherit" component="div" ml={1} fontSize={15}>
-            Movies
+            AppMovies - By Rosy
           </Typography>
         </Toolbar>
       </Box>

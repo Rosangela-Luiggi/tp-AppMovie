@@ -22,9 +22,9 @@ export default function CardMovie({ image, title, id}) {
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
+      <CardActions sx={{justifyContent: "center", alignItems: "center"}}>
       <Link to={`/detail/${id}`} style={{ textDecoration: "none" }}>
-        <Button size="small" color="primary">
+        <Button sx={{fontSize: "20px"}} size="medium" color="primary">
           <AiOutlineEye />
         </Button>
         </Link>

@@ -30,11 +30,11 @@ export default function CarouselMovie() {
         <div key={movie.id} style={{ height: "520px" }}>
           <img
             src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} />
-          <Typography className="legend" style={{ fontSize: "15px", backgroundColor:"#e0e0e0", color: "#424242" }}>{movie.title}<br />{movie.overview}
-          <Link to={`/detail/${movie.id}`} style={{ textDecoration: "none" }}>
-          <Button variant="text">
-            Ver Más</Button></Link>
-            </Typography>
+          <Typography className="legend" style={{ fontSize: "15px", backgroundColor: "#e0e0e0", color: "#424242" }}>{movie.title}<br />{movie.overview}
+            <Link to={`/detail/${movie.id}`} style={{ textDecoration: "none" }}>
+              <Button variant="text">Ver Más</Button>
+            </Link>
+          </Typography>
 
         </div>
 

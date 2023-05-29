@@ -6,6 +6,7 @@ import ContainerHome from "./components/ContainerHome";
 import Search from "./components/Search";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ContainerDetails from "./components/ContainerDetails"
+import TrailerMovie from "./components/TrailerMovie";
 
 function App() {
   
@@ -20,6 +21,7 @@ function App() {
         <Route path="/category/:optionCategory" element= {<ContainerCategory />} />
         <Route path="/search" element= {<Search/>} />
         <Route path="/detail/:id" element= {<ContainerDetails/>} />
+        <Route path="/trailer/:id" element= {<TrailerMovie/>} />
         
       </Routes>
       <Footer/>

@@ -91,11 +91,11 @@ export default function Header() {
                     <Typography textAlign="center">{page}</Typography>
                   </Link>
                 </MenuItem>
-                
+
               ))}
               <Link to={`/search`} style={{ textDecoration: "none" }}>
-                <MenuItem  onClick={handleCloseNavMenu}>
-                <Typography textAlign="center"> Search</Typography>
+                <MenuItem onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center"> Search</Typography>
                 </MenuItem>
               </Link>
             </Menu>
@@ -103,26 +103,26 @@ export default function Header() {
           <LocalMoviesTwoToneIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
-<Link to={`/`} style={{ textDecoration: "none" }}>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            AppMovie
-          </Typography>
-</Link>
+          <Link to={`/`} style={{ textDecoration: "none" }}>
+            <Typography
+              variant="h5"
+              noWrap
+              component="a"
+              href=""
+              sx={{
+                mr: 2,
+                display: { xs: "flex", md: "none" },
+                flexGrow: 1,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".3rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              AppMovie
+            </Typography>
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Link to={`/`} style={{ textDecoration: "none" }}>
               <Button sx={{ my: 2, color: "white", display: "block" }}>

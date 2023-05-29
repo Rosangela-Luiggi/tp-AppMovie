@@ -8,6 +8,7 @@ import { useState } from "react";
 export default function Search() {
   const apiKey = import.meta.env.VITE_API_KEY;
   const [card, setCard] = useState([]);
+
  
 
 let searchValue ="";
@@ -18,6 +19,7 @@ let searchValue ="";
     axios(`https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&languaje=es-ES&query=${searchValue}`)
       .then(
         (data) => {
+          console.log(data)
           setCard(data.data.results);
 
         })
@@ -26,16 +28,16 @@ let searchValue ="";
   }
   
   return (
-    <Container>
+    <Container >
       <InputSearch onSearch={searchMovie} />
-      <Grid
+      <Grid 
 
         container
-        paddingTop={"5rem"}
         direction="row"
         justifyContent="space-around"
         alignItems="center"
         width={"100%"}
+        height="100vh"
       >
         {card &&
           card.map((elem) => (
@@ -47,11 +49,12 @@ let searchValue ="";
               style={{ display: "flex", justifyContent: "center" }}
             >
               <CardMovie
-             
+            key={elem.id}
                 image={`https://image.tmdb.org/t/p/w500/${elem.poster_path}`}
                 title={elem.title}
+                id={elem.id}
 
-              />
+              /> 
 
             </Grid>
 
