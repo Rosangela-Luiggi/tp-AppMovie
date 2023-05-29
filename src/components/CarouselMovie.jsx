@@ -3,6 +3,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a lo
 import { Carousel } from 'react-responsive-carousel';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Button, Typography } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 
 export default function CarouselMovie() {
@@ -28,7 +30,11 @@ export default function CarouselMovie() {
         <div key={movie.id} style={{ height: "520px" }}>
           <img
             src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`} />
-          <p className="legend" style={{ fontSize: "15px" }}>{movie.title} <br />{movie.overview}</p>
+          <Typography className="legend" style={{ fontSize: "15px", backgroundColor:"#e0e0e0", color: "#424242" }}>{movie.title}<br />{movie.overview}
+          <Link to={`/detail/${movie.id}`} style={{ textDecoration: "none" }}>
+          <Button variant="text">
+            Ver Más</Button></Link>
+            </Typography>
 
         </div>
 

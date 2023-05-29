@@ -27,6 +27,7 @@ export default function ContainerDetails() {
 
     
     
+    
     return (
 
         <Container key={details.id} sx={{display:"flex", marginTop: 15}}>
