@@ -1,4 +1,4 @@
-import ModalTrailer from './ModalTtailer'
+import ModalTrailer from './ModalTrailer'
 
 import axios from "axios";
 import { useState, useEffect } from "react";

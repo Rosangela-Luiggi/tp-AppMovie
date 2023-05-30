@@ -17,7 +17,7 @@ export default function CardMovie({ image, title, id}) {
           alt="poster de la peli"
         />
         <CardContent>
-          <Typography gutterBottom variant="h6" component="div" fontSize="15px">
+          <Typography gutterBottom variant="" component="div" fontSize="15px">
             {title}
           </Typography>
         </CardContent>

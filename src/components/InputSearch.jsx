@@ -2,8 +2,8 @@
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 
-export default function InputSearch({ onSearch }) {
-
+export default function InputSearch({onSearch}) {
+ 
   return (
     <Box
       component="form"
@@ -13,7 +13,7 @@ export default function InputSearch({ onSearch }) {
       noValidate
       autoComplete="off"
     >
-      <TextField fontWeight="bold" id="standard-basic" label="Pelicula" variant="standard" onChange={e => onSearch(e)} />
+      <TextField fontWeight="bold" id="standard-basic" label="Pelicula" variant="standard"  onChange={e => onSearch(e)}/>
     </Box>
   );
 }

@@ -29,48 +29,50 @@ export default function ContainerCategory() {
 
 
   return (
+<Box sx={{display: "flex", flexDirection:"column"}}>
+  
+<Grid
+
+container
+paddingTop={"5rem"}
+direction="row"
+justifyContent="space-around"
+alignItems="center"
+width={"100%"}
+>
+{movie &&
+  movie.map((elem) => (
 
     <Grid
-
-      container
-      paddingTop={"5rem"}
-      direction="row"
-      justifyContent="space-around"
-      alignItems="center"
-      width={"100%"}
+      key={elem.id}
+      item
+      xs={4}
+      style={{ display: "flex", justifyContent: "center" }}
     >
-      {movie &&
-        movie.map((elem) => (
+      <CardMovie
+        image={`https://image.tmdb.org/t/p/w500/${elem.poster_path}`}
+        title={elem.title}
+        id={elem.id}
 
-          <Grid
-            key={elem.id}
-            item
-            xs={4}
-            style={{ display: "flex", justifyContent: "center" }}
-          >
-            <CardMovie
-              image={`https://image.tmdb.org/t/p/w500/${elem.poster_path}`}
-              title={elem.title}
-              id={elem.id}
-
-            />
-
-          </Grid>
-
-        ))
-      }
-
-      <Box display="flex" justifyContent="center" padding="10px">
-        <Button sx={{ backgroundColor: "black" }} mr="15px" ml="15px" onClick={() => setPage(page - 1)}>
-          Prev
-        </Button>
-        <Button sx={{ backgroundColor: "black" }} mr="15px" ml="15px" onClick={() => setPage(page + 1)}>
-          Next
-        </Button>
-      </Box>
+      />
 
     </Grid>
 
+  ))
+}
+
+
+
+</Grid>
+<Box display="flex" justifyContent="center" padding="10px">
+  <Button sx={{ backgroundColor: "black" }} mr="15px" ml="15px" onClick={() => setPage(page - 1)}>
+    Prev
+  </Button>
+  <Button sx={{ backgroundColor: "black" }} mr="15px" ml="15px" onClick={() => setPage(page + 1)}>
+    Next
+  </Button>
+</Box>
+</Box>
   );
 }
 

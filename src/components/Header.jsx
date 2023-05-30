@@ -50,6 +50,7 @@ export default function Header() {
                 letterSpacing: ".3rem",
                 color: "inherit",
                 textDecoration: "none",
+                underline: "none",
               }}
             >
               AppMovie
@@ -93,7 +94,7 @@ export default function Header() {
                 </MenuItem>
 
               ))}
-              <Link to={`/search`} style={{ textDecoration: "none" }}>
+              <Link to={`/search`} style={{ underline: "none", textDecoration: "none" }}>
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center"> Search</Typography>
                 </MenuItem>
@@ -103,7 +104,7 @@ export default function Header() {
           <LocalMoviesTwoToneIcon
             sx={{ display: { xs: "flex", md: "none" }, mr: 1 }}
           />
-          <Link to={`/`} style={{ textDecoration: "none" }}>
+          <Link to={`/`} style={{ underline: "none", textDecoration: "none" }}>
             <Typography
               variant="h5"
               noWrap

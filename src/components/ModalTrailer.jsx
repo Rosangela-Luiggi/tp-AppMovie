@@ -12,7 +12,7 @@ export default function ModalTrailer({video}) {
     <div>
        <Box
       sx={{
-        height: 300,
+        height: 400,
         flexGrow: 1,
         minWidth: 300,
         transform: 'translateZ(0)',
@@ -42,8 +42,6 @@ export default function ModalTrailer({video}) {
         <Box
           sx={{
             position: 'relative',
-            maxWidth: 900,
-            maxHeight: 950,
             bgcolor: 'background.paper',
             border: '2px solid #000',
             boxShadow: (theme) => theme.shadows[5],
@@ -51,10 +49,10 @@ export default function ModalTrailer({video}) {
           }}
         >
           
-          <Typography id="modal-modal-title" variant="h4" component="h2">
+          <Typography id="modal-modal-title" variant="h6" component="h2">
             Trailer Oficial
           </Typography>
-          <Box sx={{mx: "25px", mt: "70px"}} >
+          <Box sx={{mx: "25px", mt: "0"}} >
           <ReactPlayer
           url={`https://www.youtube.com/watch?v=${video}`}
           
