@@ -116,7 +116,7 @@ export default function ListMovie() {
                                 </ListItemAvatar>
                                 <ListItemText />
                                 {movie.title}
-                                <Link to={`/search`} style={{ textDecoration: "none" }}>
+                                <Link to={`/detail/${movie.id}`} style={{ textDecoration: "none" }}>
                                     <IconButton edge="end" aria-label="comments" sx={{ ml: 6 }}>
                                         <ArrowCircleRightOutlinedIcon />
                                     </IconButton>
